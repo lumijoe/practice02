@@ -216,7 +216,7 @@ section.slide_section div::before {
     background-color: rgba(10, 27, 41, 0.68);
     z-index: 300;
 }
-div.overbg{ /*::afterがないとスピード増す*/
+div.overbg::after { /*::afterがないとスピード増す*/
     position: relative;
     display: inline-block;
 }
