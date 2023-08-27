@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <h1>ハンバーガーメニュー作成</h1>
+        <ul>3本線を配置する(before、beforeのシャドウ、afterで作成)
+            <li>1:3本線を配置させる空白エリアを作成する</li>
+            <li>2:beforeとafterを使って2本線を描き中央に配置(50%-1px)</li>
+            <li>3:真ん中に2本が重なっているので,
+                translateYで上にマイナスと下にプラスpxで線を上下に散らばせる
+            </li>
+            <li>4:真ん中の線をbeforeのボックスシャドウで作成、beforeでマイナスpx上にあげたぶんX軸（横に0）Y軸（下に数字分）Bはぼかし（ぼかしなしの0）カラーは色指定を記述</li>
+        </ul>
+        <br>
+        <ul>動作を設定する
+            <li>5:navemenuクラスをセレクトしjs用に使用できる変数に変換する</li>
+            <li>その変数（cssクラス）のクラスリストにトグルの性質を持つ新しいクラスを追加するように設定する事がこの一連の作業（クラスの表示のオンオフが可能になる）</li>
+            <li>→→その変数にさらに処理用のクラスを付与して、それをjs用変数に変換する</li>
+            <li>→→その変数がクリックされたら、動作するイベント処理関数を設定する↓</li>
+            <li>cssでis-activeクラスの表示状態を設定する</li>
+            
+        </ul>
+        <br>
+        <h1>transform,transition, animation</h1>
+        <ul>違いは例：画像
+            <li>transform:画像を予め45度傾けて表示させる設定
+            </li>
+            <li>transition:transform指定している画像が3秒かけて45度傾いていく変化の動き設定</li>
+            <li>animation:画像が3秒かけて大きさが1.5倍になり右に200px移動するなどの細かい動き設定</li>
+        </ul>
+        <div>
+            <button class="navmenu" type="button"></button>
+        </div>
+        <br>
+        <br>
+        <div>
+            <button class="navmenu2" type="button"><span class="navline"></span></button>
+        </div>
+        <br>
+        <br>
+        <div class="hamburger-menu">
+            <button class="navmenu3" type="button"></button>
+        </div>
+        <br>
+        <h1>ギャラリーのスクロールと向き__横ver.</h1>
+        <section class="slide_section">
+            <div class="overbg">
+                <ul class="gallery-heroitems">
+                    <li><img src="./assets/img2/img1.jpg" alt="" class="gallery-heroitems-item" width="380" heigt="auto"></li>
+                    <li><img src="./assets/img2/img2.jpg" alt="" class="gallery-heroitems-item"  width="380" height="auto"></li>
+                    <li><img src="./assets/img2/img3.jpg" alt="" class="gallery-heroitems-item"  width="380" height="auto"></li>
+                    <li><img src="./assets/img2/img4.jpg" alt="" class="gallery-heroitems-item"  width="380" height="auto"></li>
+                    <li><img src="./assets/img2/img5.jpg" alt="" class="gallery-heroitems-item" width="380" height="auto"></li>
+                    <li><img src="./assets/img2/img6.jpg" alt="" class="gallery-heroitems-item" width="380" height="auto"></li>
+                    <li><img src="./assets/img2/img7.jpg" alt="" class="gallery-heroitems-item" width="380" height="auto"></li>
+                    <li><img src="./assets/img2/img8.jpg" alt="" class="gallery-heroitems-item" width="380" height="auto"></li>
+                    <li><img src="./assets/img2/img9.jpg" alt="" class="gallery-heroitems-item" width="380" height="auto"></li>
+                    <li><img src="./assets/img2/img10.jpg" alt="" class="gallery-heroitems-item" width="380" height="auto"></li>
+                    <li><img src="./assets/img2/img11.jpg" alt="" class="gallery-heroitems-item" width="380" height="auto"></li>
+                </ul>
+                <h1 class="overlay-ttl-h1">PORTFOLIO</h1>
+                <p class="overlay-ttl-p">Webcoder, Designer, Planner<br><strong>DESIGN</strong> for solution</p>
+                <div class="scroll-line">
+                    <span>SCROLL</span>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+        
+        <!-- divなしver2 -->
+        <section class="slide_section">
+                <ul class="gallery-heroitems">
+                    <li><img src="./assets/img2/img1.jpg" alt="" class="gallery-heroitems-item" width="auto" height="auto"></li>
+                    <li><img src="./assets/img2/img2.jpg" alt="" class="gallery-heroitems-item"  width="auto" height="auto"></li>
+                    <li><img src="./assets/img2/img3.jpg" alt="" class="gallery-heroitems-item"  width="auto" height="auto"></li>
+                    <li><img src="./assets/img2/img4.jpg" alt="" class="gallery-heroitems-item"  width="auto" height="auto"></li>
+                    <li><img src="./assets/img2/img5.jpg" alt="" class="gallery-heroitems-item" width="auto"  height="auto"></li>
+                    <li><img src="./assets/img2/img6.jpg" alt="" class="gallery-heroitems-item" width="auto"  height="auto"></li>
+                    <li><img src="./assets/img2/img7.jpg" alt="" class="gallery-heroitems-item" width="auto"  height="auto"></li>
+                    <li><img src="./assets/img2/img8.jpg" alt="" class="gallery-heroitems-item" width="auto"  height="auto"></li>
+                    <li><img src="./assets/img2/img9.jpg" alt="" class="gallery-heroitems-item" width="auto"  height="auto"></li>
+                    <li><img src="./assets/img2/img10.jpg" alt="" class="gallery-heroitems-item" width="auto"  height="auto"></li>
+                    <li><img src="./assets/img2/img11.jpg" alt="" class="gallery-heroitems-item" width="auto"  height="auto"></li>
+                </ul>
+        </section>
+        
+        
+
+        
+        
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>

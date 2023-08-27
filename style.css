@@ -1,0 +1,323 @@
+@charset "UTF-8";
+
+.navmenu {
+    height: 44px;
+    width: 44px;
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navmenu::before, 
+.navmenu::after {
+    position: absolute;
+    top: calc(50% - 1px);
+    content: '';
+    width: 24px;
+    height: 1px;
+    display: block;
+    transition: transform .3s;
+    padding-left: 3px;
+    
+}
+.navmenu::before {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 0 #333;
+    background:rgb(101, 239, 63);
+}
+.navmenu::after {
+    transform: translateY(8px);
+    background:rgb(174, 16, 16);
+}
+.navmenu.is-active::before {
+    transform: rotate(45deg);
+    box-shadow: none;
+}
+.navmenu.is-active::after {
+    transform: rotate(-45deg);
+}
+
+/* navmenu2 */
+span {
+    display: inline-block;
+}
+.navmenu2 {
+    height: 44px;
+    width: 44px;
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.navline {
+    position: absolute;
+    /* top: calc(50% - 0.5px); */
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    /* ↑これでまかなえる */
+    margin: auto;
+    width: 18px;
+    height: 1px;
+    background: #000;
+}
+.navline::before,
+.navline::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 0.5px);
+    content: '';
+    width: 24px;
+    height: 1px;
+    display: block;
+    transition: transform .3s;
+    background: #000;
+}
+.navline::before {
+    transform: translateY(-8px);
+}
+.navline::after {
+    transform: translateY(8px);
+}
+/* is-activeでの表示状態 */
+.is-active2 {
+    visibility: hidden;
+}
+.navline.is-active2::before,
+.navline.is-active2::after {
+    visibility: visible;
+} 
+.navline.is-active2::before {
+    transform: rotate(45deg);
+}
+.navline.is-active2::after {
+    transform: rotate(-45deg);
+}
+
+
+/* navmenu3 */
+.navmenu3 {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    width: 30px;
+    height: 20px;
+  } 
+  .navmenu3::before,
+  .navmenu3::after { 
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    position: absolute;
+  } 
+  .navmenu3::before {
+    top: 0;
+  } 
+  .navmenu3::after {
+    bottom: 0;
+  } 
+  .navmenu3.active::before {
+    top: 50%; 
+    transform: translateY(-50%) rotate(45deg); 
+  }
+  .navmenu3.active::after {
+    bottom: 50%; 
+    transform: translateY(50%) rotate(-45deg);
+  }
+
+/* ギャラリーのスクロールと向き__横バージョン */
+.slide_section {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+ul.gallery-heroitems {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* position: absolute; */
+    animation: slide 30s infinite linear;
+}
+ul li img.gallery-heroitems-item {
+    width: auto;
+    height: 100%; /* ブラウザ画面の高さに依存 */ 
+}
+ul li {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* 580px未満 
+@media (max-width: 579px) { 
+    ul li img.gallery-heroitems-item {
+        height: 100vw;
+        width: auto;
+    }
+    section.slide_section ul,
+    section.slide_section ul li {
+        height: 100vw;
+        width: auto;
+    }
+}*/
+/* 580px以上850px未満849px height40vw */
+@media (min-width: 580px) and (max-width: 849px) { 
+    ul li img.gallery-heroitems-item {
+        height: 40vw;
+        width: auto;
+    }
+    section.slide_section ul,
+    section.slide_section ul li {
+        height: 40vw;
+        width: auto;
+    }
+    ul.gallery-heroitems {
+        animation: slide s infinite linear;
+    }
+}
+/* 850px以上 height60vw */
+@media (min-width: 850px) {
+    ul.heroitems li img.gallery-heroitems-item {
+        height: 60vw;
+        width: auto;
+    }
+    section.slide_section ul,
+    section.slide_section ul li {
+        height: 60vw;
+        width: auto;
+    }
+}
+/* スライドショー、オーバーレイ、テキスト */
+section.slide_section div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 27, 41, 0.68);
+    z-index: 300;
+}
+div.overbg::after { /*::afterがないとスピード増す*/
+    position: relative;
+    display: inline-block;
+}
+.overlay-ttl-h1 {
+    position: absolute;
+    top: 40vw;
+    left: -28vw;
+    font-style: italic;
+    font-weight: 100;
+    color: white;
+    z-index: 700;
+    transform: rotate(90deg);
+    font-size: 13vw;
+}
+.overlay-ttl-p {
+    position: absolute;
+    top: 85%;
+    left: 5%;
+    padding-top: 0px;
+    z-index: 700;
+    color: white;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    font-style: italic;
+}
+.scroll-line {
+    position: absolute;
+    z-index: 700;
+    color: white;
+    right: 5%;
+    bottom: 0px;
+    width: 1px;
+    height: 300px;
+    background-color: rgba(10, 27, 41, 0.68);
+    transition: all 1.4s;
+}
+.scroll-line span{
+    position: absolute;
+    top: -70px;
+    left: -8px;
+    font-size: 10px;
+    font-style: italic;
+    letter-spacing: 0.08em;
+    transform-origin: left bottom ;
+    writing-mode: vertical-rl;
+    vertical-align: top;
+}
+.scroll-line::after {
+    z-index: 700;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 1px;
+    background: white;
+    animation-duration: 6s;
+    animation-delay: 0s;
+    animation-timing-function: ease;
+    animation-name: lineFlow;
+    animation-fill-mode: none;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-direction: normal;
+    animation-timeline: auto;
+}
+
+@keyframes lineFlow {
+    0% {
+        bottom: 100%;
+        height: 0%;
+    }
+    20% {
+        bottom: 0%;
+        height: 100%;  
+    }
+    40% {
+        bottom: 0%;
+        height: 0%;
+    }
+    100% {
+        bottom: 0%;
+        height: 0%;
+    }
+}
+
+
+/* slide_section2 */
+.slide_section2 {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+.gallery-heroitems2 {
+    display: flex;
+    list-style: none;
+    gap: 0;
+}
+.gallery-heroitems-item2 {
+    object-fit: cover;
+} 
+
+
+
