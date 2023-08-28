@@ -13,14 +13,29 @@ const navBtn2 = document.querySelector('.navmenu2');
 const navPanel = document.getElementById('navpanel'); // id を指定する
 
 navBtn2.addEventListener("click", function() {
-    navBtn2.classList.toggle("is-active2");
+   /* navBtn2.classList.toggle("is-active2");
     navPanel.classList.add('navpanel_open');
     navPanel.classList.remove('navpanel');
+    
     const navLine = document.querySelector('.navline');
     navLine.classList.toggle("is-active2");
+
+});*/
+
+if (navBtn2.classList.contains("is-active2")) {
+      navBtn2.classList.remove("is-active2");
+      navPanel.classList.remove('navpanel_open');
+      navPanel.classList.add('navpanel_close');
+
+  } else {
+    navBtn2.classList.add("is-active2");
+    navPanel.classList.add('navpanel_open');
+    /*navPanel.classList.remove('navpanel');*/
+  }
+
+  const navLine = document.querySelector('.navline');
+  navLine.classList.toggle("is-active2");
 });
-
-
 
 
 
