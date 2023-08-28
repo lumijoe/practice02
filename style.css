@@ -96,6 +96,17 @@ span {
     transform: rotate(-45deg);
 }
 
+.navpanel {
+    visibility: hidden;
+}
+.navpanel_open {
+    background-color: aqua;
+    visibility: visible;
+}
+.navpanel_close {
+    visibility: hidden;
+}
+
 
 /* navmenu3 */
 .navmenu3 {

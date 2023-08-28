@@ -8,12 +8,21 @@ navBtn.addEventListener("click", function() {
 });
 
 //navmenu2
+//navmenu2
 const navBtn2 = document.querySelector('.navmenu2');
+const navPanel = document.getElementById('navpanel'); // id を指定する
+
 navBtn2.addEventListener("click", function() {
     navBtn2.classList.toggle("is-active2");
+    navPanel.classList.add('navpanel_open');
+    navPanel.classList.remove('navpanel');
     const navLine = document.querySelector('.navline');
     navLine.classList.toggle("is-active2");
 });
+
+
+
+
 
 //navmenu3
 const navMenuButton = document.querySelector('.navmenu3');
